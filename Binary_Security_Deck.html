@@ -707,14 +707,15 @@
             </div>
             <div class="slide-content">
                 <h1 class="slide-title">Complete ECU Binary Lifecycle</h1>
-                <p class="slide-subtitle">Work Packages 1-7: Full coverage with the "Fix" layer that competitors miss
+                <p class="slide-subtitle">Full coverage of automotive security requirements — with the "Fix" layer that
+                    competitors miss
                 </p>
 
                 <div class="flow-diagram">
                     <div class="flow-step">
                         <div class="flow-step-icon">📥</div>
                         <div class="flow-step-title">Ingest</div>
-                        <div class="flow-step-desc">VBF / AUTOSAR / ANSI C</div>
+                        <div class="flow-step-desc">VBF / AUTOSAR / Firmware</div>
                     </div>
                     <div class="flow-arrow">→</div>
                     <div class="flow-step">
@@ -738,20 +739,20 @@
 
                 <div class="cards-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 30px;">
                     <div class="card">
-                        <div class="card-title">WP1 & WP2</div>
+                        <div class="card-title">Vulnerability Scanning</div>
                         <div class="card-text">Deep SAST/DAST analysis of ECU binaries</div>
                     </div>
                     <div class="card">
-                        <div class="card-title">WP3</div>
-                        <div class="card-text">FOSS Discovery & SBOM generation</div>
+                        <div class="card-title">FOSS Discovery</div>
+                        <div class="card-text">Open source detection & SBOM generation</div>
                     </div>
                     <div class="card">
-                        <div class="card-title">WP5 & WP6</div>
+                        <div class="card-title">Risk Assessment</div>
                         <div class="card-text">IMR Investigation & TARA integration</div>
                     </div>
                     <div class="card">
-                        <div class="card-title">WP7</div>
-                        <div class="card-text">UNECE-155 & ISO 21434 compliance</div>
+                        <div class="card-title">Compliance Automation</div>
+                        <div class="card-text">UNECE R155 & ISO 21434 evidence</div>
                     </div>
                 </div>
             </div>
@@ -788,7 +789,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-icon">💻</div>
-                                <div class="card-title">ANSI C Intelligence</div>
+                                <div class="card-title">Compiled Firmware (C/C++)</div>
                                 <div class="card-text">Decompilation with control flow and symbolic execution</div>
                             </div>
                         </div>
@@ -1054,6 +1055,12 @@
                             <td><span class="cross">✗</span></td>
                         </tr>
                         <tr>
+                            <td>UNECE R155 / ISO 21434</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="partial">⚠</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
                             <td>SOC2 / DORA / EU AI Act</td>
                             <td><span class="check">✓</span></td>
                             <td><span class="cross">✗</span></td>
@@ -1194,7 +1201,7 @@
                 <div class="highlight-box" style="max-width: 700px; margin: 40px auto;">
                     <div class="highlight-box-title">🎯 Pilot Success Metrics</div>
                     <div style="display: flex; gap: 24px; justify-content: center; margin-top: 16px;">
-                        <span>✓ WP1-7 Coverage</span>
+                        <span>✓ Full Coverage</span>
                         <span>✓ Format Support</span>
                         <span>✓ Auto-Fix Demo</span>
                         <span>✓ ROI Calculation</span>
