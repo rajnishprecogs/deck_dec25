@@ -10,18 +10,20 @@
     <style>
         :root {
             --primary: #8B5CF6;
-            --primary-light: #A78BFA;
+            --primary-light: #7C3AED;
             --accent: #06B6D4;
-            --bg-dark: #0a0a0f;
-            --bg-card: rgba(139, 92, 246, 0.08);
-            --bg-card-hover: rgba(139, 92, 246, 0.15);
-            --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
+            --bg-light: #ffffff;
+            --bg-subtle: #f8f9fc;
+            --bg-card: rgba(139, 92, 246, 0.06);
+            --bg-card-hover: rgba(139, 92, 246, 0.12);
+            --text-primary: #1a1a2e;
+            --text-secondary: #6b7280;
             --gradient-1: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
-            --gradient-2: linear-gradient(135deg, #1e1b4b 0%, #0a0a0f 100%);
+            --gradient-2: linear-gradient(135deg, #ffffff 0%, #f8f9fc 100%);
             --success: #10B981;
             --warning: #F59E0B;
             --danger: #EF4444;
+            --border-color: rgba(139, 92, 246, 0.15);
         }
 
         * {
@@ -32,7 +34,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-dark);
+            background: var(--bg-light);
             color: var(--text-primary);
             overflow: hidden;
         }
@@ -71,7 +73,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: radial-gradient(ellipse at top right, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+            background: radial-gradient(ellipse at top right, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -82,7 +84,7 @@
             left: 0;
             width: 40%;
             height: 60%;
-            background: radial-gradient(ellipse at bottom left, rgba(6, 182, 212, 0.1) 0%, transparent 60%);
+            background: radial-gradient(ellipse at bottom left, rgba(6, 182, 212, 0.06) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -110,7 +112,7 @@
         .logo-divider {
             width: 1px;
             height: 28px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(26, 26, 46, 0.2);
         }
 
         .logo-icon {
@@ -130,6 +132,7 @@
             font-size: 20px;
             background: var(--gradient-1);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -153,14 +156,16 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 16px;
-            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #4b5563 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .slide-title.gradient {
             background: var(--gradient-1);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -243,6 +248,7 @@
             font-weight: 800;
             background: var(--gradient-1);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -354,8 +360,8 @@
 
         /* Architecture */
         .architecture-visual {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            background: rgba(248, 249, 252, 0.8);
+            border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 40px;
             margin-top: 20px;
@@ -472,9 +478,9 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: var(--bg-card);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            color: white;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
             font-size: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -611,8 +617,8 @@
         <!-- Slide 1: Title -->
         <div class="slide title-slide active" id="slide-1">
             <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 30px;">
-                <img src="logo/logo_wht_text.png" alt="Precogs AI" style="height: 50px;">
-                <div class="logo-divider" style="width: 1px; height: 40px; background: rgba(255,255,255,0.3);"></div>
+                <img src="logo/logo_blk_text.png" alt="Precogs AI" style="height: 50px;">
+                <div class="logo-divider" style="width: 1px; height: 40px; background: rgba(26,26,46,0.2);"></div>
                 <img src="logo/KT Secure LOGO.png" alt="KT Secure" style="height: 40px;">
             </div>
             <div class="title-badge">
@@ -647,7 +653,7 @@
         <div class="slide" id="slide-2">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
@@ -699,7 +705,7 @@
         <div class="slide" id="slide-3">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
@@ -762,7 +768,7 @@
         <div class="slide" id="slide-4">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
@@ -818,7 +824,7 @@
         <div class="slide" id="slide-5">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
@@ -874,7 +880,7 @@
         <div class="slide" id="slide-6">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
@@ -944,7 +950,7 @@
         <div class="slide" id="slide-7">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
@@ -1004,7 +1010,7 @@
         <div class="slide" id="slide-8">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
@@ -1116,7 +1122,7 @@
         <div class="slide" id="slide-9">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
@@ -1169,7 +1175,7 @@
         <div class="slide" id="slide-10">
             <div class="slide-header">
                 <div class="logo">
-                    <img src="logo/logo_wht_text.png" alt="Precogs AI" class="logo-img">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
