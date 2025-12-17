@@ -637,7 +637,7 @@
                     <div class="metric-label">AI-Enhanced Detection</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">3%</div>
+                    <div class="metric-value">&lt;2%</div>
                     <div class="metric-label">False Positive Rate</div>
                 </div>
                 <div class="metric">
@@ -649,7 +649,7 @@
                 We're building the infrastructure to secure the Software Defined Vehicle."</p>
         </div>
 
-        <!-- Slide 2: The Gap -->
+        <!-- Slide 2: Binary SAST/DAST Problem Statement -->
         <div class="slide" id="slide-2">
             <div class="slide-header">
                 <div class="logo">
@@ -657,45 +657,100 @@
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">02 / 10</span>
+                <span class="slide-number">02 / 12</span>
             </div>
             <div class="slide-content">
-                <h1 class="slide-title">The Gap: Why "Digital Twins" Aren't Enough</h1>
-                <p class="slide-subtitle">Current tools offer visibility, but they're passive. They show you the
-                    vulnerability but don't help you fix it.</p>
+                <h1 class="slide-title">The Binary Blind Spot</h1>
+                <p class="slide-subtitle">Traditional security tools were built for source code. But in automotive,
+                    you're shipping <strong>binaries</strong> — and that's where the real vulnerabilities hide.</p>
 
-                <div class="two-column">
-                    <div>
-                        <h3 style="color: var(--danger); margin-bottom: 20px; font-size: 20px;">❌ The Old Way:
-                            Observation</h3>
-                        <div class="card" style="border-color: rgba(239, 68, 68, 0.3);">
-                            <div class="card-title">Passive Scanning</div>
-                            <ul class="feature-list" style="margin-top: 16px;">
-                                <li style="color: var(--text-secondary);">Find vulnerabilities</li>
-                                <li style="color: var(--text-secondary);">Generate reports</li>
-                                <li style="color: var(--text-secondary);">Wait for manual fix</li>
-                                <li style="color: var(--text-secondary);">Hope for the best</li>
-                            </ul>
+                <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px; gap: 20px;">
+                    <!-- Problem Column -->
+                    <div class="card"
+                        style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                            <div class="card-icon"
+                                style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">🔍</div>
+                            <div class="card-title" style="font-size: 16px; color: var(--danger);">Legacy Tools Fail
+                            </div>
+                        </div>
+                        <ul style="list-style: none; font-size: 13px; line-height: 1.8; color: var(--text-secondary);">
+                            <li style="margin-bottom: 8px;">❌ Source-code focused SAST — useless for VBF/AUTOSAR</li>
+                            <li style="margin-bottom: 8px;">❌ Generic DAST — no automotive protocol support</li>
+                            <li style="margin-bottom: 8px;">❌ 40-60% false positive rates overwhelm teams</li>
+                            <li style="margin-bottom: 8px;">❌ No remediation — just endless vulnerability reports</li>
+                        </ul>
+                    </div>
+
+                    <!-- Stats Column -->
+                    <div class="card"
+                        style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                        <div
+                            style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; font-weight: 600;">
+                            THE INDUSTRY PAIN</div>
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div style="background: rgba(239, 68, 68, 0.1); padding: 14px; border-radius: 12px;">
+                                <div style="font-size: 32px; font-weight: 800; color: var(--danger);">85%</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">of ECU vulnerabilities found
+                                    post-deployment</div>
+                            </div>
+                            <div style="background: rgba(245, 158, 11, 0.1); padding: 14px; border-radius: 12px;">
+                                <div style="font-size: 32px; font-weight: 800; color: var(--warning);">$5.4M</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">avg. cost of automotive
+                                    security recall</div>
+                            </div>
+                            <div style="background: rgba(139, 92, 246, 0.1); padding: 14px; border-radius: 12px;">
+                                <div style="font-size: 32px; font-weight: 800; color: var(--primary);">6-12 mo</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">typical binary vulnerability
+                                    remediation cycle</div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <h3 style="color: var(--success); margin-bottom: 20px; font-size: 20px;">✓ The Precogs Shift:
-                            Active Defense</h3>
-                        <div class="card" style="border-color: rgba(16, 185, 129, 0.3);">
-                            <div class="card-title">AI-Powered Action</div>
-                            <ul class="feature-list" style="margin-top: 16px;">
-                                <li>Detect vulnerabilities</li>
-                                <li>Generate mitigation strategy</li>
-                                <li>Auto-create fix PRs</li>
-                                <li>Verify remediation</li>
-                            </ul>
+
+                    <!-- Solution Column -->
+                    <div class="card"
+                        style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05);">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                            <div class="card-icon"
+                                style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">🚀</div>
+                            <div class="card-title" style="font-size: 16px; color: var(--success);">Precogs AI-Native
+                            </div>
                         </div>
+                        <ul style="list-style: none; font-size: 13px; line-height: 1.8;">
+                            <li style="margin-bottom: 8px;">✅ <strong>Binary SAST</strong> — Deep analysis of VBF, ELF,
+                                PE, AUTOSAR binaries</li>
+                            <li style="margin-bottom: 8px;">✅ <strong>Automotive DAST</strong> — CAN/LIN/UDS protocol
+                                fuzzing</li>
+                            <li style="margin-bottom: 8px;">✅ <strong>&lt;2% false positives</strong> — AI contextual
+                                understanding</li>
+                            <li style="margin-bottom: 8px;">✅ <strong>Auto-remediation</strong> — AI generates
+                                mitigation + PRs</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="highlight-box" style="margin-top: 30px;">
-                    <div class="highlight-box-title">💡 Key Insight</div>
-                    <div>We don't just find the flaw in the VBF — we generate the mitigation strategy and auto-fix it.
+                <div class="highlight-box" style="margin-top: 24px; padding: 20px 28px;">
+                    <div class="highlight-box-title" style="font-size: 16px; margin-bottom: 16px; text-align: center;">⚡
+                        The Precogs Difference — AI-Native from Day One</div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+                        <div>
+                            <div style="font-size: 24px; margin-bottom: 6px;">🏢</div>
+                            <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Built for Scale</div>
+                            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                                Enterprise-grade architecture for 1000s of ECUs across global fleets</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 24px; margin-bottom: 6px;">🔮</div>
+                            <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Built for Future</div>
+                            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">SDV-ready
+                                platform evolving with R155, ISO 21434 & emerging threats</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 24px; margin-bottom: 6px;">⚡</div>
+                            <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Built for Speed</div>
+                            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">Detection to
+                                auto-remediation in hours, not months</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -709,7 +764,7 @@
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">03 / 10</span>
+                <span class="slide-number">03 / 12</span>
             </div>
             <div class="slide-content">
                 <h1 class="slide-title">Complete ECU Binary Lifecycle</h1>
@@ -764,7 +819,7 @@
             </div>
         </div>
 
-        <!-- Slide 4: Technical Edge -->
+        <!-- Slide 4: DAST Analysis -->
         <div class="slide" id="slide-4">
             <div class="slide-header">
                 <div class="logo">
@@ -772,7 +827,222 @@
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">04 / 10</span>
+                <span class="slide-number">04 / 12</span>
+            </div>
+            <div class="slide-content">
+                <h1 class="slide-title">AI-Native DAST: Runtime Vulnerability Detection</h1>
+                <p class="slide-subtitle">Dynamic Application Security Testing — simulating real-world attacks on ECU
+                    binaries and automotive systems</p>
+
+                <div class="two-column">
+                    <div>
+                        <h3 style="margin-bottom: 20px; color: var(--primary-light);">🔬 DAST Methods</h3>
+                        <div class="cards-grid" style="grid-template-columns: 1fr; gap: 14px;">
+                            <div class="card" style="padding: 18px;">
+                                <div class="card-title">🎯 ECU Fuzzing</div>
+                                <div class="card-text">AI-guided mutation-based fuzzing targeting CAN, LIN, FlexRay
+                                    protocols and diagnostic interfaces (UDS/OBD-II)</div>
+                            </div>
+                            <div class="card" style="padding: 18px;">
+                                <div class="card-title">📡 Protocol Analysis</div>
+                                <div class="card-text">Runtime testing of automotive communication protocols including
+                                    DoIP, SOME/IP, and Ethernet endpoints</div>
+                            </div>
+                            <div class="card" style="padding: 18px;">
+                                <div class="card-title">🔐 Secure Boot Testing</div>
+                                <div class="card-text">HSM integration validation, signature verification bypass
+                                    detection, and bootloader security analysis</div>
+                            </div>
+                            <div class="card" style="padding: 18px;">
+                                <div class="card-title">⚡ Memory Safety Testing</div>
+                                <div class="card-text">Buffer overflow, use-after-free, and stack smashing detection in
+                                    running firmware</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 20px; color: var(--primary-light);">📋 Automotive Compliance</h3>
+                        <div class="cards-grid" style="grid-template-columns: 1fr; gap: 10px;">
+                            <div class="card" style="padding: 14px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="card-title" style="margin: 0;">🇺🇳 UNECE R155</div>
+                                    <span class="check">✓</span>
+                                </div>
+                                <div class="card-text">CSMS type approval evidence generation</div>
+                            </div>
+                            <div class="card" style="padding: 14px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="card-title" style="margin: 0;">📋 ISO 21434</div>
+                                    <span class="check">✓</span>
+                                </div>
+                                <div class="card-text">Cybersecurity engineering work products</div>
+                            </div>
+                            <div class="card" style="padding: 14px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="card-title" style="margin: 0;">🎯 TARA Integration</div>
+                                    <span class="check">✓</span>
+                                </div>
+                                <div class="card-text">Auto-populate threat &amp; risk assessments</div>
+                            </div>
+                            <div class="card" style="padding: 14px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="card-title" style="margin: 0;">🔒 MISRA C/C++</div>
+                                    <span class="check">✓</span>
+                                </div>
+                                <div class="card-text">Coding standard enforcement &amp; reporting</div>
+                            </div>
+                            <div class="card" style="padding: 14px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="card-title" style="margin: 0;">⚙️ AUTOSAR</div>
+                                    <span class="check">✓</span>
+                                </div>
+                                <div class="card-text">BSW/SWC security validation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 24px; margin-top: 20px;">
+                    <div class="highlight-box" style="flex: 1; margin: 0;">
+                        <div class="highlight-box-title">💡 SAST + DAST = Complete Coverage</div>
+                        <div style="font-size: 14px;">SAST detects vulnerabilities in source code; DAST finds runtime
+                            issues that only manifest during execution.</div>
+                    </div>
+                    <div
+                        style="background: var(--bg-card); border: 1px solid rgba(139, 92, 246, 0.2); border-radius: 16px; padding: 16px; flex: 1;">
+                        <h4 style="margin-bottom: 12px; font-size: 14px; color: var(--primary-light);">📊 Detection
+                            Benchmarks</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 12px;">
+                            <div style="font-weight: 600;">Method</div>
+                            <div style="font-weight: 600;">True Pos</div>
+                            <div style="font-weight: 600;">False Pos</div>
+                            <div>Fuzzing</div>
+                            <div>94%</div>
+                            <div>8%</div>
+                            <div>Symbolic</div>
+                            <div>88%</div>
+                            <div>12%</div>
+                            <div>Static</div>
+                            <div>85%</div>
+                            <div>15%</div>
+                            <div style="color: var(--success); font-weight: 600;">AI-Enhanced</div>
+                            <div style="color: var(--success); font-weight: 600;">97%</div>
+                            <div style="color: var(--success); font-weight: 600;">&lt;2%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: End-to-End Workflow -->
+        <div class="slide" id="slide-5">
+            <div class="slide-header">
+                <div class="logo">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
+                    <div class="logo-divider"></div>
+                    <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
+                </div>
+                <span class="slide-number">05 / 12</span>
+            </div>
+            <div class="slide-content">
+                <h1 class="slide-title" style="font-size: 40px; margin-bottom: 10px;">End-to-End Security Workflow</h1>
+                <p class="slide-subtitle" style="margin-bottom: 20px;">From code ingestion to compliance dashboards — a
+                    seamless, integrated pipeline</p>
+
+                <div class="architecture-visual" style="padding: 20px;">
+                    <div
+                        style="text-align: center; margin-bottom: 6px; font-weight: 600; color: var(--primary-light); font-size: 12px;">
+                        CODE INGESTION</div>
+                    <div class="arch-row" style="gap: 12px; margin-bottom: 6px;">
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">📂 Manual Upload</div>
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">🔗 GitHub</div>
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">🦊 GitLab</div>
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">💻 VS Code</div>
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">🔧 CI/CD</div>
+                    </div>
+                    <div style="text-align: center; margin: 6px 0;">
+                        <div style="font-size: 20px; color: var(--primary);">↓</div>
+                    </div>
+                    <div class="arch-row" style="margin-bottom: 6px;">
+                        <div class="arch-box highlight" style="padding: 12px 40px;">
+                            <div style="font-size: 16px;">🧠 PRECOGS AI ENGINE</div>
+                            <div style="font-size: 11px; opacity: 0.9;">AI-Native Analysis Platform</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin: 6px 0;">
+                        <div style="font-size: 20px; color: var(--primary);">↓</div>
+                    </div>
+                    <div
+                        style="text-align: center; margin-bottom: 6px; font-weight: 600; color: var(--primary-light); font-size: 12px;">
+                        AI-NATIVE SECURITY ANALYSIS</div>
+                    <div class="arch-row" style="gap: 12px; margin-bottom: 6px;">
+                        <div class="arch-box"
+                            style="padding: 10px 16px; font-size: 13px; background: rgba(16, 185, 129, 0.1); border-color: var(--success);">
+                            🔍 SAST</div>
+                        <div class="arch-box"
+                            style="padding: 10px 16px; font-size: 13px; background: rgba(16, 185, 129, 0.1); border-color: var(--success);">
+                            🎯 DAST</div>
+                        <div class="arch-box"
+                            style="padding: 10px 16px; font-size: 13px; background: rgba(16, 185, 129, 0.1); border-color: var(--success);">
+                            📦 SBOM</div>
+                        <div class="arch-box"
+                            style="padding: 10px 16px; font-size: 13px; background: rgba(16, 185, 129, 0.1); border-color: var(--success);">
+                            🔧 Auto-Fix</div>
+                    </div>
+                    <div style="text-align: center; margin: 6px 0;">
+                        <div style="font-size: 20px; color: var(--primary);">↓</div>
+                    </div>
+                    <div
+                        style="text-align: center; margin-bottom: 6px; font-weight: 600; color: var(--primary-light); font-size: 12px;">
+                        COMPLIANCE MAPPING</div>
+                    <div class="arch-row" style="gap: 10px; margin-bottom: 6px;">
+                        <div class="arch-box" style="padding: 8px 14px; font-size: 12px;">🎯 TARA</div>
+                        <div class="arch-box" style="padding: 8px 14px; font-size: 12px;">📋 IMR</div>
+                        <div class="arch-box" style="padding: 8px 14px; font-size: 12px;">🇺🇳 UNECE</div>
+                        <div class="arch-box" style="padding: 8px 14px; font-size: 12px;">📜 ISO 21434</div>
+                        <div class="arch-box" style="padding: 8px 14px; font-size: 12px;">🔒 SOC2</div>
+                        <div class="arch-box" style="padding: 8px 14px; font-size: 12px; border-color: var(--accent);">➕
+                            Vanta</div>
+                    </div>
+                    <div style="text-align: center; margin: 6px 0;">
+                        <div style="font-size: 20px; color: var(--primary);">↓</div>
+                    </div>
+                    <div
+                        style="text-align: center; margin-bottom: 6px; font-weight: 600; color: var(--primary-light); font-size: 12px;">
+                        OUTPUT &amp; INTEGRATIONS</div>
+                    <div class="arch-row" style="gap: 12px;">
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">📊 Dashboard</div>
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">📄 Reports</div>
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">🔌 API</div>
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">🛡️ Armis</div>
+                        <div class="arch-box" style="padding: 10px 16px; font-size: 13px;">🎯 Tenable</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 16px; margin-top: 12px;">
+                    <div class="highlight-box" style="flex: 1; margin: 0; padding: 16px;">
+                        <div class="highlight-box-title" style="font-size: 14px;">🔄 Real-Time Analysis</div>
+                        <div style="font-size: 13px;">VS Code extension provides instant feedback as developers write
+                            code</div>
+                    </div>
+                    <div class="highlight-box" style="flex: 1; margin: 0; padding: 16px;">
+                        <div class="highlight-box-title" style="font-size: 14px;">🔗 Seamless Integration</div>
+                        <div style="font-size: 13px;">Native connectors for Vanta, Armis, Tenable, and custom platforms
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Technical Edge -->
+        <div class="slide" id="slide-6">
+            <div class="slide-header">
+                <div class="logo">
+                    <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
+                    <div class="logo-divider"></div>
+                    <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
+                </div>
+                <span class="slide-number">06 / 12</span>
             </div>
             <div class="slide-content">
                 <h1 class="slide-title">We Speak "Vehicle," Not Just "Code"</h1>
@@ -821,14 +1091,14 @@
         </div>
 
         <!-- Slide 5: Unification -->
-        <div class="slide" id="slide-5">
+        <div class="slide" id="slide-7">
             <div class="slide-header">
                 <div class="logo">
                     <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">05 / 10</span>
+                <span class="slide-number">07 / 12</span>
             </div>
             <div class="slide-content">
                 <h1 class="slide-title">The Unification Advantage</h1>
@@ -877,14 +1147,14 @@
         </div>
 
         <!-- Slide 6: Supply Chain -->
-        <div class="slide" id="slide-6">
+        <div class="slide" id="slide-8">
             <div class="slide-header">
                 <div class="logo">
                     <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">06 / 10</span>
+                <span class="slide-number">08 / 12</span>
             </div>
             <div class="slide-content">
                 <h1 class="slide-title">Trust Your Tier 1s. Verify Everything.</h1>
@@ -947,14 +1217,14 @@
         </div>
 
         <!-- Slide 7: Compliance -->
-        <div class="slide" id="slide-7">
+        <div class="slide" id="slide-9">
             <div class="slide-header">
                 <div class="logo">
                     <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">07 / 10</span>
+                <span class="slide-number">09 / 12</span>
             </div>
             <div class="slide-content">
                 <h1 class="slide-title">Audit-Ready, Always</h1>
@@ -1007,14 +1277,14 @@
         </div>
 
         <!-- Slide 8: Comparison -->
-        <div class="slide" id="slide-8">
+        <div class="slide" id="slide-10">
             <div class="slide-header">
                 <div class="logo">
                     <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">08 / 10</span>
+                <span class="slide-number">10 / 12</span>
             </div>
             <div class="slide-content">
                 <h1 class="slide-title">Active vs. Passive: The Comparison</h1>
@@ -1119,14 +1389,14 @@
         </div>
 
         <!-- Slide 9: Architecture -->
-        <div class="slide" id="slide-9">
+        <div class="slide" id="slide-11">
             <div class="slide-header">
                 <div class="logo">
                     <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">09 / 10</span>
+                <span class="slide-number">11 / 12</span>
             </div>
             <div class="slide-content">
                 <h1 class="slide-title">Seamless Integration Architecture</h1>
@@ -1172,14 +1442,14 @@
         </div>
 
         <!-- Slide 10: Next Steps -->
-        <div class="slide" id="slide-10">
+        <div class="slide" id="slide-12">
             <div class="slide-header">
                 <div class="logo">
                     <img src="logo/logo_blk_text.png" alt="Precogs AI" class="logo-img">
                     <div class="logo-divider"></div>
                     <img src="logo/KT Secure LOGO.png" alt="KT Secure" class="logo-img" style="height: 28px;">
                 </div>
-                <span class="slide-number">10 / 10</span>
+                <span class="slide-number">12 / 12</span>
             </div>
             <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
                 <h1 class="slide-title gradient">Let's Prove It: Rapid Pilot</h1>
@@ -1234,7 +1504,7 @@
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 10;
+        const totalSlides = 12;
 
         function showSlide(n) {
             document.querySelectorAll('.slide').forEach(slide => {
